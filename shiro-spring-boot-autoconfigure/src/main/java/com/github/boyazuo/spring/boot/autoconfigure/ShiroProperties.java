@@ -28,21 +28,26 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "shiro")
 public class ShiroProperties {
 	/**
-	 * Config file path.
+	 * Custom Realm 
 	 */
-	private String config;
 	private Class<?> realm;
+	/**
+	 * URL of login
+	 */
 	private String loginUrl;
+	/**
+	 * URL of success
+	 */
 	private String successUrl;
+	/**
+	 * URL of unauthorized
+	 */
 	private String unauthorizedUrl;
+	/**
+	 * filter chain
+	 */
 	private Map<String, String> filterChainDefinitions;
 
-	public String getConfig() {
-		return config;
-	}
-	public void setConfig(String config) {
-		this.config = config;
-	}
 
 	public Class<?> getRealm() {
 		return realm;
