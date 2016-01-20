@@ -56,7 +56,7 @@ public class ShiroManager {
 	/**
 	 * 用户授权信息Cache
 	 */
-	@Bean(name = "cacheManager")
+	@Bean(name = "shiroCacheManager")
 	@ConditionalOnMissingBean
 	public CacheManager cacheManager() {
 		return new MemoryConstrainedCacheManager();
@@ -64,9 +64,9 @@ public class ShiroManager {
 
 	@Bean(name = "securityManager")
 	@ConditionalOnMissingBean
-	public DefaultSecurityManager securityManager(CacheManager cacheManager) {
+	public DefaultSecurityManager securityManager(CacheManager shiroCacheManager) {
 		DefaultSecurityManager sm = new DefaultWebSecurityManager();
-		sm.setCacheManager(cacheManager);
+		sm.setCacheManager(shiroCacheManager);
 		return sm;
 	}
 
