@@ -16,9 +16,11 @@
 
 package com.github.boyazuo.spring.boot.autoconfigure;
 
-import java.util.Map;
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Configuration properties for Shiro.
@@ -46,7 +48,9 @@ public class ShiroProperties {
 	/**
 	 * filter chain
 	 */
-	private Map<String, String> filterChainDefinitions;
+	private List<Map<String, String>> filterChainDefinitions;
+
+	private Map<String, String> filterChainDefinitionMap;
 
 
 	public Class<?> getRealm() {
@@ -73,12 +77,21 @@ public class ShiroProperties {
 	public void setUnauthorizedUrl(String unauthorizedUrl) {
 		this.unauthorizedUrl = unauthorizedUrl;
 	}
-	public Map<String, String> getFilterChainDefinitions() {
+	public List<Map<String, String>> getFilterChainDefinitions() {
 		return filterChainDefinitions;
 	}
-	public void setFilterChainDefinitions(Map<String, String> filterChainDefinitions) {
+	public void setFilterChainDefinitions(List<Map<String, String>> filterChainDefinitions) {
 		this.filterChainDefinitions = filterChainDefinitions;
 	}
-	
-	
+
+	public Map<String, String> getFilterChainDefinitionMap() {
+		if (filterChainDefinitions != null && filterChainDefinitions.size() > 0) {
+			filterChainDefinitionMap = new LinkedHashMap<String, String>();
+			for (Map<String, String> filterChainDefinition : filterChainDefinitions) {
+				filterChainDefinitionMap.putAll(filterChainDefinition);
+			}
+		}
+		return filterChainDefinitionMap;
+	}
+
 }

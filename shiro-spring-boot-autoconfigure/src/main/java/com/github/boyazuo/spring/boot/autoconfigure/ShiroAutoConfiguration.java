@@ -54,7 +54,7 @@ public class ShiroAutoConfiguration {
 		shiroFilter.setLoginUrl(properties.getLoginUrl());
 		shiroFilter.setSuccessUrl(properties.getSuccessUrl());
 		shiroFilter.setUnauthorizedUrl(properties.getUnauthorizedUrl());
-		shiroFilter.setFilterChainDefinitionMap(properties.getFilterChainDefinitions());
+		shiroFilter.setFilterChainDefinitionMap(properties.getFilterChainDefinitionMap());
 		return shiroFilter;
 	}
 }

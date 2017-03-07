@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.boyazuo</groupId>
 	<artifactId>shiro-spring-boot</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>pom</packaging>
 
 	<name>shiro-spring-boot</name>
@@ -63,7 +63,6 @@
 			<id>release</id>
 			<build>
 				<plugins>
-					<!-- Source -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
@@ -77,7 +76,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- Javadoc -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -91,7 +89,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- GPG -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
