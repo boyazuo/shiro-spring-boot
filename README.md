@@ -10,10 +10,10 @@ shiro:
   successUrl: #success url
   unauthorizedUrl: #403 url
   filterChainDefinitions:	#filter chian
-    "/login": authc
-    "/logout": logout
-    "/static/**": anon
-    "/**": authc    
+    - "/login": authc
+    - "/logout": logout
+    - "/static/**": anon
+    - "/**": authc    
 ```
 
 ## Issue Tracking
